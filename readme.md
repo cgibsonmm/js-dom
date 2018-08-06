@@ -119,7 +119,7 @@ As always, discuss what you find with your neighbors -- explaining these ideas i
 
 ### You Do: Selecting DOM elements (20 minutes)
 
-https://git.generalassemb.ly/wdi-nyc/js-dom-quotes-lab
+https://git.generalassemb.ly/wdi-nyc-peloton/js-dom-quotes-lab
 
 ## Manipulating Element Objects (60 minutes)
 
