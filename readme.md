@@ -1,119 +1,262 @@
 # The Document Object Model (DOM)
 
 ## Learning Objectives (_students will be able to..._)
-- Explain the DOM: its value and its structure
-- Access DOM Elements using relative selection
-- Access DOM Elements using query selectors
-- Create, Read (access), Update (content and attributes), and Destroy DOM elements
+
+- Explain what the DOM is and how it is structured
+- Target DOM elements using JavaScript selectors
+- Create, read, update, and delete DOM elements
+- Change the attributes or content of a DOM element
+- Explore JavaScript methods for DOM manipulation and traversal
 
 ## Framing (10 minutes)
 
-> Why study JS?
+Today, we will learn about how JavaScript uses objects to represent what you see in the browser. Remember, everything is an object!
 
-> What does "it runs in the browser" mean? Why is this something that we would want to do?
+The [Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction), commonly referred to as the "DOM", is a programming interface for HTML. When you load HTML into the browser, it gets converted into a dynamic object-based structure. The [visual representation](https://css-tricks.com/dom/) of this is what you see when you open up Developer Tools in the browser.
 
-> We've talked about values (primitive types and objects) and the language constructs for creating our own. We have also alluded to / used some values which are available to us in the "environment". What is an example?
-
-> What is the most annoying thing about websites?
-
-> What is HTML / a Document (in terms of the web) and how to we represent it?
-
-## Introducing the DOM (10 minutes)
-
-JavaScript is the lingua franca of the web. Since it's advent in 1995 as a neat but hastily delivered browser feature from Netscape it has revolutionized the web and by extension the world.
-Foundational to the success (existence) of this revolution is a clunky and confusing API called the DOM, the Document Object Model.
-The DOM's conception was organic and as its importance grew was standardized.
-
-> NOTE: Keep in mind that the DOM is NOT just whatever is in the HTML!
-
-The DOM is best understood through use so we will waste little time before diving in but if you are interested in a more complete / formalized description, check out [CSS Tricks: What is the DOM?](https://css-tricks.com/dom/) and [MDN Intro to the DOM]( https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction )
-
-### Representing the Document
-
-The document is the content of our webpage which is encoded into our HTML. The HTML we write is one representation of this.
-
-> What structure does HTML take? (hint: think of parent / child relationships between elements)
-> [ hint 2 ](http://hakim.se/experiments/css/domtree/)
-
-An HTML document (like so many other things in programming) is a tree. We will think of it as a tree of elements:
+The DOM is available for us to manipulate as an object, and this object is structured and stored like an upside down tree.
 
 ![Element Tree](assets/LXF118.tut_grease.diagram.png)
 
-It is important to note though, that there are separate element and text nodes:
-
-![HTML as a tree](assets/treeStructure.png)
-
-![HTML more tree like](assets/treeStructureAlternate.png)
-
-We will generally interact with elements and consider the text something belonging to the element but remember to keep in mind actual implementation
-
-## Query Selectors (10 minutes)
-
-Historically the DOM's implementation has been inconsistent across browsers and many of its methods are/were lengthy. This led to the creation of a library called JQuery, which became phenomenally popular due to its ability to patch some annoying parts of JavaScript, and created many methods to assist the interaction with the DOM in the browser. JQuery helped remove lots of boilerplate browser detection schemes, where certain code was only valid in certain browsers. 
-
-> read this: https://blog.garstasio.com/you-dont-need-jquery/why-not/
-
-We're not going to dive into jQuery today. Instead, we'll be looking at more modern ways of interacting with the DOM using the free methods provided to us by the DOM.  
+or
 
 
-## Accessing Element Objects (60 minutes)
-When interacting with the DOM, we will primarily be interfacing with element object
+```
+html
+└── head
+│   ├──title
+│   ├──meta
+│   ├──link[rel="stylesheet"]
+|   └──script[type="text/javascript"]
+|
+└── body
+    ├── header
+    │   ├── h1
+    │   └── nav
+    └── section.simplicity
+    |   └── h2
+    │   └── article
+    ├── section.life
+    |   └── h2
+    │   └── article
+    │       └── block_quote
+    │       └── block_quote
+    └── footer
+```
 
-The `document` object is exposed on the global object, `window`. This is the top level or root element object.
+## The Document Object
 
-If you haven't already, clone this repo. Open `docs/index.html` in your browser and open the developer console.
+Each web page loaded in the browser has its own `document` object. The `document` interface serves as an entry point to the web page's content. The document is an example of a **host object**--that is, a JavaScript object provided by and unique to the browser environment.
 
-The document has several entry points to the page's content including `.head` and `.body`
+## Nodes
 
-### Relative Selection (20 minutes)
-There are several properties that every element has which reference the elements proximate to it:
+Everything in the DOM exists as a **node**. HTML elements are called **element nodes**, attributes are called **attribute nodes**, the text inside elements are called **text nodes**. There are even comment nodes for `<!-- html comments like this one --->`. The document itself is called a document node.
 
-- `.children`
-- `.childNodes`
-- `.firstChild`
-- `.lastChild`
-- `.previousSibling`
-- `.nextSibling`
-- `.parentElement`
+You also can refer to nodes by their relationships to each other. For example, in the graphic above, you would say that the body element is the "parent" to the two `div` elements contained inside it, which are called child nodes. The two divs are also "siblings" to one another because they are on the same level in the tree structure.
 
-![Node Relations]( https://www.w3schools.com/xml/navigate.gif ) 
+![DOM Tree Relationships](http://profsamscott.com/javascript/images/helloworldtree.jpg)
+
+## Basics of Working with the DOM
+
+Understanding the DOM is central to working in JavaScript. JavaScript uses the DOM to create dynamic HTML. This includes adding new HTML elements and attributes, changing CSS styles in a page, removing existing elements and attributes, and [many more things](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).
+
+Most of what you do with client-side javascript is going to revolve around manipulating the DOM.
+
+## Getting Data from the DOM
+
+There are two groups of methods you can use to get elements from the DOM. We'll start with the oldest and end with the ones we recommend.
+
+### `getElement(s)By`
+
+Each of these methods follows the same general naming convention:
+
+| Method Name | Description |
+| --- | --- |
+| `.getElementById()` | Gets a single element by an ID selector |
+| `.getElementsByClassName()` | Gets a list of elements with a class selector |
+| `.getElementsByTagName()` | Gets a list of elements with a tag (element) selector |
+
+Each of these three methods are part of the `document` object. We'll walk through each individually:
+
+##### `getElementById()`
+
+To use the `getElementById` method, we first need to reference the `document` object (where the method lives). Then, we pass in a string that matches the ID of an element in our HTML
+
+```js
+let titleElement = document.getElementById('title')
+```
+
+The above code will start at the document (top of the tree), and look for an element with an id called `title` and save it in the variable `titleElement`
+
+##### `getElementsByClassName`
+
+The `getElementById` method returns a single Node item; the `getElementsByClassName` returns a NodeList, which is like an Array of Nodes.
+
+```js
+let paragraphElements = document.getElementsByClassName('paragraph')
+```
+
+The above code snippet returns a NodeList (like an Array) of every element with a class of 'paragraph' and saves it to the `paragraphElements` variable. Notice that `Elements` in the method name is plural here, where as in `getElementById` it's singular? This is to tell us that `getElementByID` only returns one Node while `getElementsByClassName` returns a list of Nodes.
+
+
+##### `getElementsByTagName`
+
+The `getElementsByTagName` is a hand way of retrieving elements by their html tag (`h1`, `span`, `a`, `li`, etc). `Elements` is plural in the method name, meaning it too returns a list of Nodes.
+
+```js
+let spanElements = document.getElementsByTagName('span')
+```
+
+The above snippet returns every `span` element on the page and saves it to the `spanElements` variable.
+
+### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/dc-wdi-fundamentals/js-dom-practice) (10 min / 0:40)
+
+Clone down and open the practice exercise and work through the prompts in the `getelements.js` file.
+
+### Query Selector (10 minutes)
+
+There are only two methods in this group: `querySelector` and `querySelectorAll`. Unlike the `getElement(s)By` group, these are simpler to understand - querySelector returns a single value, and querySelectorAll returns...well...everything that it can find. You can even select multiple IDs this way.
+
+We'll walk through both `querySelector` and `querySelectorAll`, but first a note about selectors:
+
+Unlike with the `getElement(s)By` family of methods, we need to pass a complete selector to both `querySelector` and `querySelectorAll` - it's in the name! What's a selector? A selector is a way of targeting a particular element, something we learned about when we first covered CSS.
+
+The following is a list of CSS selectors and the JavaScript equivalents you would use with `querySelector`:
+
+| CSS Selector | JS Selector |
+| --- | --- |
+| `.class-name` | `.class-name` |
+| `#some-id` | `#some-id` |
+| `h1` | `h1` |
+
+They're the same! Phew, that's lucky!
+
+The `querySelector` methods were designed to mimic the way we target elements in CSS, so the selector we pass in is the same we'd use to style that element!
+
+**`querySelector`**
+
+With `querySelector`, we'll pass in a selector for the element we want to retrieve from the DOM. The element that we get back will be the first element that matches that selector.
+
+```js
+let title = document.querySelector('.title')
+```
+
+We'll only get one element back and it will always be the first element that matches the selector (in this case, `.title`). If we have more than one element in the page with that selector and we want to retrieve them all, then we'd use `querySelectorAll`
+
+**`querySelectorAll`**
+
+With `querySelectorAll`, we'll get back all elements on the page that match the selector we pass in.
+
+```js
+let title = document.querySelectorAll('h2')
+```
+
+The above code snippet would return a list of all `h2` elements on the page.
+
+### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/dc-wdi-fundamentals/js-dom-practice) (10 min / 1:00)
+
+Open up the practice exercise and work through the prompts in the `queryselector.js` file.
+
+## Break (10 min / 1:10)
+
+## Setting Data in the DOM
+
+Now that we know how to get elements from the DOM, it'd probably be helpful to learn what we can do with them. We'll soon learn about adding event listeners to DOM elements - a way for us to listen for when some event happens to a node (like it gets clicked) and then perform some response. But there are many other things we can do with nodes! Toggle, add or remove classes, change their styling, animate them, move them from one part of the page to another, replace their content with new content, etc. The list goes on!
+
+### Exploring DOM Nodes (45 min / 2:00)
+> 20 minutes to research and prepare a demo, 25 minutes to present (5 minutes per group)
+
+We're going to count off and break up in to 5 groups. Each group will be responsible for one of the topic areas below. Your goal is to research this topic area as a group and come up with a demo of how you would use it and why it might be helpful or important. We'll then go around the room and demo what we find!
+
+**1. Getting and Setting Attributes**
+
+Remember from our HTML lesson that some elements have attributes: the `a` tag has an `href` attribute and the `img` tag has a `src` attribute. In JavaScript, there are ways to access the list of attributes on a node and to get and set attributes.
+
+Every node object has an `attributes` property where it lists it's attributes (like `href` and `src`). You can get and set data using the `getAttribute` and `setAttribute` method.
+
+Look at the `attributes` property of a node. Also look up the `getAttribute` and `setAttribute` methods and how they work. Prepare a demo to showcase these. Your demo should show the following:
+
+- How do we access the list of attributes on a node?
+- How to we get the value of a particular attribute (like the `href` attribute)?
+- How do we add an attribute (like the `name` attribute)?
+
+**2. Class list API**
+
+A very common task in JavaScript is toggling CSS classes. We'll remove a `.is-hidden` class when the user clicks on something or we'll add an `is-active` class a navigation element when someone clicks on a hamburger menu.
+
+The way we get and set classes on nodes is with the `classList` API. Every node has a `classList` property and there are methods we can use to add  a class (`addClass`), remove a class (`removeClass`) or toggle a class (`toggleClass`).
+
+Research these methods and think about how they work and why they're useful. Prepare a demo to showcase the following:
+
+- How can we see the list of classes a node has?
+- How can we check to see if a node has a class?
+- How can we add a class to a node?
+- How can we remove a class from a node?
+- How can we toggle a class from a node?
+
+**3. Traversing Nodes**
+
+We'll often have a particular node but need to check it's parents, children or siblings. Luckily, each node has this information stored within it!
+
+Look through a node object and see if you can find the following:
+
+- `children` / `childNodes`
+- `firstChild` / `firstElementChild`
+- `lastChild` / `lastElementChild`
+- `nextSibling` / `nextElementSibling` and `previousSibling` / `previousElementSibling`
+- `parentNode`
+
+What are these properties? What is the difference between children and child Nodes? What kinds of nodes do you see stored in these properties?
+
+Think about these questions and explore the above list of properties. Prepare a demo to showcase how to access these and what the different options tell you.
+
+**4. Content**
+
+We'll sometimes have an element and want to change the text or html contained within that element. This is commonly called *templating* and there are libraries that will make it a little easier. With the new template literal syntax in ES6, we can often get away without a templating library. We could just use the list of properties below to reset the html or text of an element and interpolate data in to it.
+
+Review these properties of a node:
+
+- `innerHTML` / `outerHTML`
+- `innerText` / `outerText`
+- `textContent`
+
+What are they? How are they similar? How are they different?
+
+Create a demo to showcase how you might use these and why they might be useful. Can we change the html inside of an element?
+
+**5. Dataset**
+
+Part of HTML5 includes the `data-*` attribute: a way for us to attach arbitrary data to an element. If we define a `div` element with a `data-name="A Great Div"` attribute, then our `dataset` property inside our node will be an object with a `name` key holding the string `"A Great Div"`.
+
+Play around with it. Look up the `data-*` attribute and explore the `dataset` property inside of a node. See how you can create data attributes of your own and retrieve the data they hold from the `dataset` object.
+
+**extras:**
+
+**6. Changing the Styling**
+
+Something we may want to perform in JavaScript is updating or changing the styling of an element using JavaScript. A lot of web animation tools do that and there are tools for React (which we'll learn about later) that do this so you can write all your styles in JavaScript.
+
+Explore the `style` property of a node. What do you see in there? How could we see the style of an element like, is it `display: block`? Can we change these style properties, like setting the background color?
+
+**7. Node Dimensions**
+
+There are a number of use cases where getting the height, width and position of a node are helpful, but the biggest is probable animation.
+
+Explore this list of methods and properties:
+
+- `getBoundingClientRect()`
+- `offsetHeight` / `offsetWidth` and `offsetLeft` / `offsetTop`
+- `clientHeight` / `clientWidth` and `clientLeft` / `clientTop`
+
+What are they? What information do they hold? What's the difference between `offsetHeight` and `clientHeight`? What data do you see in the result of `getBoundingClientRect()`?
 
 
 
-#### You Do (5 minutes)
 
-Spend a few minutes navigating our simple list using these properties and methods in the console.
-Evaluate frequently to keep you bearings and remember to use the up/down arrows to navigate your history.
 
-Use google throughout and talk with your neighbors about confusing parts of documentation. 
-Docs are written precisely using sometimes confusing syntax; this is necessary and a good thing but takes some getting used to
 
-### Query Selection (10 minutes)
 
-> Why is relative traversal from the top level an unmaintainable approach to element selection?
 
-Fortunately, we have some much easier method of accessing elements.
-
-#### By Id
-`document.getElementById(id)`
-
-#### By Tag
-`document.getElementsByTagName(tagName)`
-
-#### By Class
-`document.getElementsByClassName(className)`
-
-#### By Selector <-- USE THIS ONE
-`document.querySelector(selector)` and `document.querySelectorAll(selector)` use CSS selectors to target elements.
-
-> What's the difference between `querySelector` and `querySelectorAll`? How does `$(selector)` behave?
-
-> Why would we use any of the other selectors?
-
-#### You Do (5 minutes)
-Play with that same list, now using query selectors.
-
-As always, discuss what you find with your neighbors -- explaining these ideas in your own words is as valuable as using them
 
 ### BREAK (10 minutes)
 
@@ -121,62 +264,6 @@ As always, discuss what you find with your neighbors -- explaining these ideas i
 
 https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab
 
-## Manipulating Element Objects (60 minutes)
-
-### Attributes
-
-`element.getAttribute(attr)` / `element.setAttribute(attr, val)`
-
-> Do you notice anything about how jquery gets and sets methods?
-
-### Classes
-
-
-`element.classList`
-
-### Style
-
-`element.style`
-
-### Input Value
-
-`inputElement.value` / `inputElement.value = someValue` 
-
-### Content
-
-`element.innerHTML` / `element.innerHTML = "<p> I'm new </p>"`
-
-
-### You do: Logo hijack (15 min)
-
-1. Open up https://www.microsoft.com/en-us/ in Chrome or Firefox, and open up the console.
-1. find an image url for the apple logo
-1. Store the url to the apple logo in a variable.
-1. Find the Microsfot logo using JS and store it in a variable.
-1. Modify the source of the logo IMG so that it's an apple logo instead.
-1. Find the Microsoft search input and store it in a variable.
-1. Modify the placeholder of the input so that it says "Search Apple" instead.
-
-Bonus: Add a new element between the image and the search textbox, telling the world that "Microsoft is the new Apple".
-
-
-### Creating Elements
-
-vanilla: `document.createElement(tagName)`
-
-NOTE: this just creates elements but they are not yet on the document!
-
-### Adding Elements
-
-`element.appendChild(newElement)`
-
-> look at the docs for the js method `.innerHTML`. How is it different from the above method?
-
-> Why might we not really like this?
-
-### Removing Elements
-
-`element.removeChild(childElement)`
 
 ## Intro to Events / Review (time permitting)
 
