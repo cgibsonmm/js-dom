@@ -250,26 +250,15 @@ Explore this list of methods and properties:
 
 What are they? What information do they hold? What's the difference between `offsetHeight` and `clientHeight`? What data do you see in the result of `getBoundingClientRect()`?
 
-
-
-
-
-
-
-
-
 ### BREAK (10 minutes)
 
-### You Do: Selecting DOM elements (20 minutes)
+---
 
-https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab
+### Lab: JS DOM Quotes (20 minutes)
+
+Complete the [DOM Quotes](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab) exercise.
 
 
-## Intro to Events / Review (time permitting)
-
-We've covered a lot today but we are missing one key element to creating dynamic sites.
-
-> What are we missing?
 
 ## Reference
 - [MDN DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Interfaces_and_Objects)
