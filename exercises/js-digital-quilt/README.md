@@ -53,3 +53,7 @@ const randColorRGB = () => {
 #### Add text to each square
 
 - Display the index value in each square from 1 to 500 using `.textContent`
+
+#### **Bonus**
+
+- See if you can dynamically change the size of the squares using JavaScript.
