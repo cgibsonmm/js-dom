@@ -54,7 +54,7 @@ Everything in the DOM exists as a **node**. HTML elements are called **element n
 
 You also can refer to nodes by their relationships to each other. For example, in the graphic above, you would say that the body element is the "parent" to the two `div` elements contained inside it, which are called child nodes. The two divs are also "siblings" to one another because they are on the same level in the tree structure.
 
-![DOM Tree Relationships](http://profsamscott.com/javascript/images/helloworldtree.jpg)
+![DOM Tree Relationships](assets/helloworldtree.jpg)
 
 ## Basics of Working with the DOM
 
@@ -109,7 +109,7 @@ let spanElements = document.getElementsByTagName('span')
 
 The above snippet returns every `span` element on the page and saves it to the `spanElements` variable.
 
-### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/dc-wdi-fundamentals/js-dom-practice) (10 min / 0:40)
+### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-practice) (10 min / 0:40)
 
 Clone down and open the practice exercise and work through the prompts in the `getelements.js` file.
 
@@ -153,7 +153,7 @@ let title = document.querySelectorAll('h2')
 
 The above code snippet would return a list of all `h2` elements on the page.
 
-### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/dc-wdi-fundamentals/js-dom-practice) (10 min / 1:00)
+### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-practice) (10 min / 1:00)
 
 Open up the practice exercise and work through the prompts in the `queryselector.js` file.
 
@@ -259,7 +259,7 @@ What are they? What information do they hold? What's the difference between `off
 Complete the following in-class exercises:
 
  - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab) exercise.
- - [Stranger DOMS](https://git.generalassemb.ly/layne/stranger-doms)
+ - [Stranger DOMS](https://git.generalassemb.ly/sei-nyc-jeopardy/stranger-doms)
  - [Digital Quilt]()
 
 ## Reference
