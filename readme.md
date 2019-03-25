@@ -260,7 +260,7 @@ Complete the following in-class exercises:
 
  - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab) exercise.
  - [Stranger DOMS](https://git.generalassemb.ly/sei-nyc-jeopardy/stranger-doms)
- - [Digital Quilt]()
+ - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
 ## Reference
 - [MDN DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Interfaces_and_Objects)
