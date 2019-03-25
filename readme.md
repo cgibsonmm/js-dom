@@ -254,11 +254,13 @@ What are they? What information do they hold? What's the difference between `off
 
 ---
 
-### Lab: JS DOM Quotes (20 minutes)
+### Lab (20 minutes)
 
-Complete the [DOM Quotes](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab) exercise.
+Complete the following in-class exercises:
 
-
+ - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab) exercise.
+ - [Stranger DOMS](https://git.generalassemb.ly/layne/stranger-doms)
+ - [Digital Quilt]()
 
 ## Reference
 - [MDN DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Interfaces_and_Objects)
