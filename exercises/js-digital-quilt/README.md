@@ -4,7 +4,7 @@
 
 Let's build a digital quilt!:
 
-![Digital Quilt](/digital-quilt.png)
+![Digital Quilt](digial-quilt.png)
 
 #### Add to the DOM with a loop
 
@@ -22,6 +22,7 @@ First goal: Add 10 divs to the DOM
 #### Give the function an argument
 
 - Provide the function with a parameter and argument, and run the loop that many times.
+- Try running the loop 500 times.
 
 #### Color the squares
 
@@ -34,7 +35,21 @@ First goal: Add 10 divs to the DOM
 ```
 `rgb` stands for **red**, **green**, and **blue**. Each number is between 0 and 255, and determines how much red, how much green, and how much blue to blend.
 
+- Use the `backgroundColor` property to set the `rgb` value.
+
 #### Color each square with a random color
 
+- Make a function that returns a string with random rgb values.
+- We'll need to generate random values for red, green, and blue, and concatenate them into a return string.
+
+```js
+const randColorRGB = () => {
+    // code in here
+}
+```
+- Now use the return value of this function for the value of the `backgroundColor` property
+*Note:* Since it is inside a loop, it will run each time the loop runs, giving us a random color each time.
 
 #### Add text to each square
+
+- Display the index value in each square from 1 to 500 using `.textContent`
