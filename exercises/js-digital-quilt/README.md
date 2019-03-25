@@ -4,7 +4,7 @@
 
 Let's build a digital quilt!:
 
-![Digital Quilt](digital-quilt.png)
+![Digital Quilt](/digital-quilt.png)
 
 #### Add to the DOM with a loop
 
