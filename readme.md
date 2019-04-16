@@ -258,10 +258,13 @@ What are they? What information do they hold? What's the difference between `off
 
 Complete the following in-class exercises:
 
- - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-quotes-lab) exercise.
- - [Stranger DOMS](https://git.generalassemb.ly/sei-nyc-jeopardy/stranger-doms)
- - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-jeopardy/js-dom-lesson/tree/master/exercises/js-digital-quilt)
+ - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-thunderbolt/js-dom-quotes-lab) exercise.
+ - [Stranger DOMS](https://git.generalassemb.ly/sei-nyc-thunderbolt/stranger-doms)
+ - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-thunderbolt/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
 ## Reference
 - [MDN DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Interfaces_and_Objects)
 - [Eloquent JS: The Document Object Model](http://eloquentjavascript.net/13_dom.html)
+- [What, exactly, is the DOM?](https://bitsofco.de/what-exactly-is-the-dom/)
+
+
