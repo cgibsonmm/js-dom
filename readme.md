@@ -266,5 +266,5 @@ Complete the following in-class exercises:
 - [MDN DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Interfaces_and_Objects)
 - [Eloquent JS: The Document Object Model](http://eloquentjavascript.net/13_dom.html)
 - [What, exactly, is the DOM?](https://bitsofco.de/what-exactly-is-the-dom/)
-
+- [Nodelist vs Htmlcollection vs Arrays?](https://hackernoon.com/htmlcollection-nodelist-and-array-of-objects-da42737181f9)
 
