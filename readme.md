@@ -109,7 +109,7 @@ let spanElements = document.getElementsByTagName('span')
 
 The above snippet returns every `span` element on the page and saves it to the `spanElements` variable.
 
-### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-thunderbolt/js-dom-practice) (10 min / 0:40)
+### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-oasis/js-dom-practice) (10 min / 0:40)
 
 Clone down and open the practice exercise and work through the prompts in the `getelements.js` file.
 
@@ -153,7 +153,7 @@ let title = document.querySelectorAll('h2')
 
 The above code snippet would return a list of all `h2` elements on the page.
 
-### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-thunderbolt/js-dom-practice) (10 min / 1:00)
+### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-oasis/js-dom-practice) (10 min / 1:00)
 
 Open up the practice exercise and work through the prompts in the `queryselector.js` file.
 
