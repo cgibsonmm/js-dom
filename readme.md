@@ -224,31 +224,11 @@ What are they? How are they similar? How are they different?
 
 Create a demo to showcase how you might use these and why they might be useful. Can we change the html inside of an element?
 
-**5. Dataset**
-
-Part of HTML5 includes the `data-*` attribute: a way for us to attach arbitrary data to an element. If we define a `div` element with a `data-name="A Great Div"` attribute, then our `dataset` property inside our node will be an object with a `name` key holding the string `"A Great Div"`.
-
-Play around with it. Look up the `data-*` attribute and explore the `dataset` property inside of a node. See how you can create data attributes of your own and retrieve the data they hold from the `dataset` object.
-
-**extras:**
-
-**6. Changing the Styling**
+**5. Changing the Styling**
 
 Something we may want to perform in JavaScript is updating or changing the styling of an element using JavaScript. A lot of web animation tools do that and there are tools for React (which we'll learn about later) that do this so you can write all your styles in JavaScript.
 
 Explore the `style` property of a node. What do you see in there? How could we see the style of an element like, is it `display: block`? Can we change these style properties, like setting the background color?
-
-**7. Node Dimensions**
-
-There are a number of use cases where getting the height, width and position of a node are helpful, but the biggest is probable animation.
-
-Explore this list of methods and properties:
-
-- `getBoundingClientRect()`
-- `offsetHeight` / `offsetWidth` and `offsetLeft` / `offsetTop`
-- `clientHeight` / `clientWidth` and `clientLeft` / `clientTop`
-
-What are they? What information do they hold? What's the difference between `offsetHeight` and `clientHeight`? What data do you see in the result of `getBoundingClientRect()`?
 
 ### BREAK (10 minutes)
 
@@ -259,7 +239,6 @@ What are they? What information do they hold? What's the difference between `off
 Complete the following in-class exercises:
 
  - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-thunderbolt/js-dom-quotes-lab) exercise.
- - [Stranger DOMS](https://git.generalassemb.ly/sei-nyc-thunderbolt/stranger-doms)
  - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-thunderbolt/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
 ## Reference
