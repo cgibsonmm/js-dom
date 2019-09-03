@@ -182,7 +182,7 @@ Look at the `attributes` property of a node. Also look up the `getAttribute` and
 
 **2. Class list API**
 
-A very common task in JavaScript is toggling CSS classes. We'll remove a `.is-hidden` class when the user clicks on something or we'll add an `is-active` class a navigation element when someone clicks on a hamburger menu.
+A very common task in JavaScript is toggling CSS classes. We'll remove a `.is-hidden` class when the user clicks on something or we'll add an `is-active` class to a navigation element when someone clicks on a hamburger menu.
 
 The way we get and set classes on nodes is with the `classList` API. Every node has a `classList` property and there are methods we can use to add  a class (`add`), remove a class (`remove`) or toggle a class (`toggle`).
 
