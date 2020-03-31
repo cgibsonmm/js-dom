@@ -239,7 +239,7 @@ Explore the `style` property of a node. What do you see in there? How could we s
 Complete the following in-class exercises:
 
  - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-quotes-lab) exercise.
- - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-blizzard/js-dom-lesson/tree/master/exercises/js-digital-quilt)
+ - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
 ## Reference
 - [MDN DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction#Interfaces_and_Objects)
