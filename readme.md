@@ -238,7 +238,7 @@ Explore the `style` property of a node. What do you see in there? How could we s
 
 Complete the following in-class exercises:
 
- - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-blizzard/js-dom-quotes-lab) exercise.
+ - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-quotes-lab) exercise.
  - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-blizzard/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
 ## Reference
