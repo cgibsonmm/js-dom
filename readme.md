@@ -8,7 +8,7 @@
 - Change the attributes or content of a DOM element
 - Explore JavaScript methods for DOM manipulation and traversal
 
-## Framing (10 minutes)
+## Framing
 
 Today, we will learn about how JavaScript uses objects to represent what you see in the browser. Remember, everything is an object!
 
@@ -109,11 +109,11 @@ let spanElements = document.getElementsByTagName('span')
 
 The above snippet returns every `span` element on the page and saves it to the `spanElements` variable.
 
-### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-practice) (10 min / 0:40)
+### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-practice)
 
 Clone down and open the practice exercise and work through the prompts in the `getelements.js` file.
 
-### Query Selector (10 minutes)
+### Query Selector
 
 There are only two methods in this group: `querySelector` and `querySelectorAll`. Unlike the `getElement(s)By` group, these are simpler to understand - querySelector returns a single value, and querySelectorAll returns...well...everything that it can find. You can even select multiple IDs this way.
 
@@ -153,20 +153,20 @@ let title = document.querySelectorAll('h2')
 
 The above code snippet would return a list of all `h2` elements on the page.
 
-### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-practice) (10 min / 1:00)
+### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-practice)
 
 Open up the practice exercise and work through the prompts in the `queryselector.js` file.
 
-## Break (10 min / 1:10)
+## Break
 
 ## Setting Data in the DOM
 
 Now that we know how to get elements from the DOM, it'd probably be helpful to learn what we can do with them. We'll soon learn about adding event listeners to DOM elements - a way for us to listen for when some event happens to a node (like it gets clicked) and then perform some response. But there are many other things we can do with nodes! Toggle, add or remove classes, change their styling, animate them, move them from one part of the page to another, replace their content with new content, etc. The list goes on!
 
 ### Exploring DOM Nodes (45 min / 2:00)
-> 20 minutes to research and prepare a demo, 25 minutes to present (5 minutes per group)
+> 30 minutes to research and prepare a demo, 25 minutes to present (5 minutes per group)
 
-We're going to count off and break up in to 5 groups. Each group will be responsible for one of the topic areas below. Your goal is to research this topic area as a group and come up with a demo of how you would use it and why it might be helpful or important. We'll then go around the room and demo what we find!
+We're going to count off and break up in to 5 groups. Each group will be responsible for one of the topic areas below. Your goal is to research this topic area as a group and come up with a demo of how you would use it and why it might be helpful or important. We'll then go around the room and demo what we find! 
 
 **1. Getting and Setting Attributes**
 
@@ -230,15 +230,18 @@ Something we may want to perform in JavaScript is updating or changing the styli
 
 Explore the `style` property of a node. What do you see in there? How could we see the style of an element like, is it `display: block`? Can we change these style properties, like setting the background color?
 
-### BREAK (10 minutes)
+### BREAK
 
 ---
 
-### Lab (20 minutes)
+### Lab
 
 Complete the following in-class exercises:
 
  - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-quotes-lab) exercise.
+ 
+ #### Bonus(try in your free time)
+ 
  - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
 ## Reference
