@@ -109,7 +109,7 @@ let spanElements = document.getElementsByTagName('span')
 
 The above snippet returns every `span` element on the page and saves it to the `spanElements` variable.
 
-### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-practice)
+### Independent Practice: [JS DOM Practice Part 1](https://git.generalassemb.ly/sei-nyc-neptune/js-dom-practice)
 
 Clone down and open the practice exercise and work through the prompts in the `getelements.js` file.
 
@@ -153,7 +153,7 @@ let title = document.querySelectorAll('h2')
 
 The above code snippet would return a list of all `h2` elements on the page.
 
-### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-practice)
+### You Do: [JS DOM Practice Part 2](https://git.generalassemb.ly/sei-nyc-neptune/js-dom-practice)
 
 Open up the practice exercise and work through the prompts in the `queryselector.js` file.
 
@@ -163,7 +163,7 @@ Open up the practice exercise and work through the prompts in the `queryselector
 
 Now that we know how to get elements from the DOM, it'd probably be helpful to learn what we can do with them. We'll soon learn about adding event listeners to DOM elements - a way for us to listen for when some event happens to a node (like it gets clicked) and then perform some response. But there are many other things we can do with nodes! Toggle, add or remove classes, change their styling, animate them, move them from one part of the page to another, replace their content with new content, etc. The list goes on!
 
-### Exploring DOM Nodes (45 min / 2:00)
+### Exploring DOM Nodes
 > 30 minutes to research and prepare a demo, 25 minutes to present (5 minutes per group)
 
 We're going to count off and break up in to 5 groups. Each group will be responsible for one of the topic areas below. Your goal is to research this topic area as a group and come up with a demo of how you would use it and why it might be helpful or important. We'll then go around the room and demo what we find! 
@@ -240,7 +240,7 @@ Complete the following in-class exercises:
 
  - [DOM Quotes](https://git.generalassemb.ly/sei-nyc-neptune/js-dom-quotes-lab) exercise.
  
- #### Bonus(try in your free time)
+ ### Bonus Lab(try in your free time)
  
  - [Digital Quilt](https://git.generalassemb.ly/sei-nyc-apollo/js-dom-lesson/tree/master/exercises/js-digital-quilt)
 
