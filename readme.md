@@ -230,11 +230,7 @@ Something we may want to perform in JavaScript is updating or changing the styli
 
 Explore the `style` property of a node. What do you see in there? How could we see the style of an element like, is it `display: block`? Can we change these style properties, like setting the background color?
 
-### BREAK
-
----
-
-### Lab
+### Bonus Lab
 
 Complete the following in-class exercises:
 
